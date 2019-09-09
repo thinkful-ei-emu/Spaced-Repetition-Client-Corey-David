@@ -80,7 +80,7 @@ class RegistrationForm extends Component {
           />
         </div>
         <footer id='reg-footer'>
-          <Button type='submit' id='reg-footer-button'>
+          <Button type='submit'>
             Sign up
           </Button><br/>
           {' '}
