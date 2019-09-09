@@ -1,0 +1,36 @@
+.Login-container{
+  /* border: 3px solid black; */
+}
+
+#sign-up{
+  text-align: center;
+}
+
+
+form {
+  /* border: 1px solid black; */
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.reg-inputs{
+  padding: 10px;
+}
+
+#reg-footer {
+  /* border: 1px solid black; */
+  padding: 20px;
+  margin: 10px;
+}
+ /* #reg-footer-button */
+Button{
+  margin: 20px;
+}
+
+a:hover{
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+}

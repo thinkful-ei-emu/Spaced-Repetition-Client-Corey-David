@@ -46,7 +46,7 @@ class RegistrationForm extends Component {
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
+        <div className='reg-inputs'>
           <Label htmlFor='registration-name-input'>
             Enter your name<Required />
           </Label>
@@ -57,7 +57,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='reg-inputs'>
           <Label htmlFor='registration-username-input'>
             Choose a username<Required />
           </Label>
@@ -67,7 +67,7 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <div>
+        <div className='reg-inputs'>
           <Label htmlFor='registration-password-input'>
             Choose a password<Required />
           </Label>
@@ -78,10 +78,10 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <footer>
-          <Button type='submit'>
+        <footer id='reg-footer'>
+          <Button type='submit' id='reg-footer-button'>
             Sign up
-          </Button>
+          </Button><br/>
           {' '}
           <Link to='/login'>Already have an account?</Link>
         </footer>

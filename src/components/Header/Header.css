@@ -1,0 +1,42 @@
+header {
+  border-bottom: 2px solid black;
+  margin: 0px;
+  padding: 0 20px 0 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.Header {
+  /* border: 2px solid black; */
+  width: 100%;
+}
+
+.LoginLogout{
+  padding: 10px;
+  /* border: 1px solid black; */
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#loginlink{
+  padding: 0 10px;
+}
+
+#signuplink{
+  padding: 0 10px;
+}
+
+.nav-container{
+  /* border: 1px solid grey; */
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
