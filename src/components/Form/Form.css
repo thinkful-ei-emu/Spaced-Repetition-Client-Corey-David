@@ -1,3 +1,25 @@
-Input {
+#login-username-input{
+  margin: 10px;
+}
+
+#login-password-input{
+  margin: 10px;
+}
+
+.LoginForm{
   /* border: 1px solid black; */
+  margin: 0 auto;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+/* form{
+  text-align: center;
+} */
+
+.LoginForm > input {
+  /* display: block; */
+
 }

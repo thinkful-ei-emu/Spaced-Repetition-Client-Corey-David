@@ -1,22 +1,12 @@
-.Login-container{
-  /* border: 3px solid black; */
-}
-
-#sign-up{
+h2{
   text-align: center;
 }
 
-
-form {
-  /* border: 1px solid black; */
-  padding: 10px;
-  margin: 10px 0 10px 0;
-  display: inline-block;
+#sign-up {
   text-align: center;
-  width: 100%;
 }
 
-.reg-inputs{
+.inputs{
   padding: 10px;
 }
 
@@ -33,4 +23,16 @@ Button{
 a:hover{
   border: solid 1px lightgrey;
   border-radius: 10px;
+}
+
+#registration-name-input{
+  margin: 10px;
+}
+
+#registration-username-input{
+  margin: 10px;
+}
+
+#registration-password-input{
+  margin: 10px;
 }
