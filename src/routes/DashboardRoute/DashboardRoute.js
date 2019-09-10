@@ -37,7 +37,7 @@ class DashboardRoute extends Component {
   render(){
     return (
 
-        <div className='dashboard-container'>
+        <section className='dashboard-container'>
 
           <h2>Dashboard for: {this.state.lang.name}</h2>
 
@@ -74,7 +74,7 @@ class DashboardRoute extends Component {
             <button>Start Learning</button>
           </div>
 
-        </div>)
+        </section>)
   }
 }
 
