@@ -1,46 +1,51 @@
-.dashboard-container{
-  /* border: 1px solid black; */
-  padding: 10px;
-  margin: 10px;
-}
 
-.progress-bar{
-  /* border: 1px solid black; */
-  display: flex;
-  padding: 10px;
-  margin: 10px;
-  align-items: center;
-  justify-content: space-around;
-}
 
-.button-container-dashboard{
-  /* border: 1px solid black; */
-  display: flex;
-  justify-content: center;
-}
+@media only screen and (min-width: 600px) {
+  .dashboard-container{
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .progress-bar{
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .button-container-dashboard{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .toLearn-container{
+    /* border: 1px solid black; */
+    margin: 25px 0;
+    padding: 25px 0;
+  }
+  
+  .table-container {
+    /* border: 1px solid black; */
+    margin: 0 auto;
+  }
+  
+  #word, #correct, #incorrect{
+    border: 1px solid black;
+  }
+  
+  #row {
+    border: 3px solid black;
+  }
+  
+  table, th, td { 
+    border: 1px solid black; 
+    border-collapse: collapse;
+    padding: 0 25px 0 25px;
+    text-align: center;
+  }
 
-.toLearn-container{
-  /* border: 1px solid black; */
-  margin: 25px 0;
-  padding: 25px 0;
-}
-
-.table-container {
-  /* border: 1px solid black; */
-  margin: 0 auto;
-}
-
-#word, #correct, #incorrect{
-  border: 1px solid black;
-}
-
-#row {
-  border: 3px solid black;
-}
-
-table, th, td { 
-  border: 1px solid black; 
-  border-collapse: collapse;
-  padding: 0 25px 0 25px;
-  text-align: center;
 }
