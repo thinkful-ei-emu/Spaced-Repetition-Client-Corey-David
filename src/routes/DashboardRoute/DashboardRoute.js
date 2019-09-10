@@ -6,7 +6,7 @@ import './Dashboard.css';
 
 class DashboardRoute extends Component {
   state = {
-    lang:'loading...',
+    lang:{name:'loading...'},
     words: [],
     head: {id:null,language_id:null,original:null,translation:null,next:0,memory_value:0},
     score:0
@@ -18,7 +18,7 @@ class DashboardRoute extends Component {
       if(this.state.words.length > 1){
         let total = 0;
     
-        this.state.words.forEach(word=>total += word.correct_count);
+        this.state.words.forEach(word=>total += word.correct_count - word.incorrect_count);
         this.setState({score:total});
       }
 
@@ -28,13 +28,13 @@ class DashboardRoute extends Component {
   render(){
     return (
 
-        <div className='dashboard-container'>
+        <section className='dashboard-container'>
 
           <h2>Dashboard for: {this.state.lang.name}</h2>
 
 
           <div className='progress-bar'>
-          <p>Words Correct:{this.state.score} </p>
+          <p>Total correct answers: {this.state.score} </p>
             <div>
               <label htmlFor="progress">{this.state.lang.name} Progress:</label>
               <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
@@ -42,17 +42,17 @@ class DashboardRoute extends Component {
           </div>
 
           <div>
-            <p>Words To Learn:</p>
+            <h3>Words to practice</h3>
             <ul>
               <li>{'words'}</li>
             </ul>
           </div>
 
           <div className='button-container-dashboard'>
-            <button>Start Learning</button>
+            <button><a href="/learn">Start practicing</a></button>
           </div>
 
-        </div>)
+        </section>)
   }
 }
 
