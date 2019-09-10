@@ -28,13 +28,10 @@ export default class App extends Component {
             <p>There was an error! Oh no!</p>
           )}
           <Switch>
-            <PrivateRoute
+          <PrivateRoute
               exact
               path={'/'}
-              render={(props)=>{
-              return(<DashboardRoute user = {this.state.user}/>);
-              
-              }}
+             component = {DashboardRoute}
             />
             <PrivateRoute
               path={'/learn'}

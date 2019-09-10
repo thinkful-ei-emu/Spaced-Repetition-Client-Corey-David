@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
+import UserContext from './../../contexts/UserContext';
+import AuthApiService from '../../services/auth-api-service';
+import Api from '../../services/Api.service';
 
 class DashboardRoute extends Component {
-  render() {
+  state = {
+    lang:'loading...'
+  }
+  static contextType = UserContext;
+  componentDidMount(){
+    Api.doFetch('language')
+    .then(res=> this.setState({lang: res}))
+    .catch(e => console.log(e));
+  }
+  render(){
     return (
-      <section>
-        implement and style me : dashboardRoute
-      </section>
-    );
+        <div>
+          the DashBoard
+          <h2>Language: (TODO)</h2>
+          <label htmlFor="progress">progress</label>
+          <progress value={50} max={100}/>
+        </div>)
   }
 }
 
