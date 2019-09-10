@@ -6,7 +6,8 @@ import Api from '../../services/Api.service';
 class DashboardRoute extends Component {
   state = {
     lang:'loading...',
-    words: []
+    words: [],
+    head: {id:null,language_id:null,original:null,translation:null,next:0,memory_value:0}
   }
   static contextType = UserContext;
   componentDidMount(){
@@ -20,7 +21,7 @@ class DashboardRoute extends Component {
           the DashBoard
           <h2>Language: {this.state.lang.name}</h2>
           <label htmlFor="progress">progress</label>
-          <progress value={50} max={100}/>
+          <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
         </div>)
   }
 }
