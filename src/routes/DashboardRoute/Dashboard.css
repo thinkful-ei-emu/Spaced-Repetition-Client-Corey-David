@@ -20,14 +20,27 @@
 }
 
 .toLearn-container{
-  /* border: 1px solid lightgrey; */
+  /* border: 1px solid black; */
   margin: 25px 0;
   padding: 25px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-ul {
-  list-style: none;
+.table-container {
+  /* border: 1px solid black; */
+  margin: 0 auto;
+}
+
+#word, #correct, #incorrect{
+  border: 1px solid black;
+}
+
+#row {
+  border: 3px solid black;
+}
+
+table, th, td { 
+  border: 1px solid black; 
+  border-collapse: collapse;
+  padding: 0 25px 0 25px;
+  text-align: center;
 }
