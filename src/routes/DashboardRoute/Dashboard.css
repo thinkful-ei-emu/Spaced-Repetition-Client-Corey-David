@@ -1,15 +1,15 @@
-
-
-@media only screen and (min-width: 600px) {
-  .dashboard-container{
+.dashboard-container{
     /* border: 1px solid black; */
     padding: 10px;
     margin: 10px;
   }
+  .dashboard-container > label{
+    text-align: center;
+  }
   
   .progress-bar{
     /* border: 1px solid black; */
-    display: flex;
+    display: block;
     padding: 10px;
     margin: 10px;
     align-items: center;
@@ -28,24 +28,26 @@
     padding: 25px 0;
   }
   
-  .table-container {
-    /* border: 1px solid black; */
-    margin: 0 auto;
-  }
-  
-  #word, #correct, #incorrect{
-    border: 1px solid black;
-  }
-  
-  #row {
-    border: 3px solid black;
-  }
-  
   table, th, td { 
+    width:100%;
+    border: 1px solid black; 
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+
+
+@media only screen and (min-width: 600px) {
+    table, th, td { 
+    margin:auto;
     border: 1px solid black; 
     border-collapse: collapse;
     padding: 0 25px 0 25px;
     text-align: center;
   }
+  .progress-bar{
+    /* border: 1px solid black; */
+    display: flex;
 
+  }
 }
