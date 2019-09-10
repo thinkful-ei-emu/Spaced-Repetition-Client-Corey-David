@@ -26,7 +26,7 @@ class DashboardRoute extends Component {
       }
 
       this.words = this.state.words.map(word => (
-        <tr><td>{word.original}</td> <td>{word.correct_count}</td> <td>{word.incorrect_count}</td></tr>
+        <tr><td className="original">{word.original}</td> <td className="correct">{word.correct_count}</td> <td className="incorrect">{word.incorrect_count}</td></tr>
       ))
 
     }))
@@ -51,7 +51,7 @@ class DashboardRoute extends Component {
           </div>
 
           <div className='toLearn-container'>
-            <h2>Words To Learn</h2>
+            <h3>Words to practice</h3>
             <div>
               <table className='table-container'>
                 <tr id='row'>

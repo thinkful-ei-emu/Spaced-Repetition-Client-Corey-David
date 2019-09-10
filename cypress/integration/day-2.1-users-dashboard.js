@@ -55,20 +55,20 @@ describe(`User story: User's dashboard`, function() {
     cy.fixture('language.json').then(({ words }) => {
 
       words.forEach((word, idx) => {
-        cy.get('main section li').eq(idx).within($li => {
+        cy.get('main section table').within($li => {
 
-          cy.get('h4').should('have.text', word.original)
+          cy.get('td.original').should('have.contain', word.original)
 
-          cy.root()
+          cy.get('td.correct')
             .should(
               'contain',
-              `correct answer count: ${word.correct_count}`
+               word.correct_count
             )
 
-          cy.root()
+          cy.get('td.incorrect')
             .should(
               'contain',
-              `incorrect answer count: ${word.incorrect_count}`
+              word.incorrect_count
             )
         })
       })
