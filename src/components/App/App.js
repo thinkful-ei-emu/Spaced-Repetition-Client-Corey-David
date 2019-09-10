@@ -31,7 +31,10 @@ export default class App extends Component {
             <PrivateRoute
               exact
               path={'/'}
-              component={DashboardRoute}
+              render={(props)=>{
+              return(<DashboardRoute user = {this.state.user}/>);
+              
+              }}
             />
             <PrivateRoute
               path={'/learn'}
