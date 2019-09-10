@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserContext from './../../contexts/UserContext';
 import AuthApiService from '../../services/auth-api-service';
 import Api from '../../services/Api.service';
+import './Dashboard.css';
 
 class DashboardRoute extends Component {
   state = {
@@ -19,7 +20,7 @@ class DashboardRoute extends Component {
           the DashBoard
           <h2>Language: (TODO)</h2>
           <label htmlFor="progress">progress</label>
-          <progress value={50} max={100}/>
+          <progress className='progress-bar' value={50} max={100}/>
         </div>)
   }
 }
