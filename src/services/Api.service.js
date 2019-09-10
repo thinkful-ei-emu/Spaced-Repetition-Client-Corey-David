@@ -9,14 +9,14 @@ export default class Api {
     let url = 'http://localhost:8000/api/';
     let options = {
       method,
-      header: new Headers({'Content-type' : 'application/json'})
+      headers: new Headers({'Content-type' : 'application/json'})
     }
 
     if(body)
       options.body = body;
     console.log(options);
     if(TokenService.hasAuthToken())
-      options.header  = new Headers({Authorization:`bearer ${TokenService.getAuthToken()}`, 'Content-type':'Application/json'});
+      options.headers  = new Headers({Authorization:`bearer ${TokenService.getAuthToken()}`, 'Content-type':'Application/json'});
     return fetch(url + endpoint, options).then(resp=>{
       if(resp.ok){
         return resp.json();
