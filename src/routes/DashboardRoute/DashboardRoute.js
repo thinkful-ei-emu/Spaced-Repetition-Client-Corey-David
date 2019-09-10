@@ -32,11 +32,15 @@ class DashboardRoute extends Component {
             </div>
           </div>
 
-          <div>
+          <div className='toLearn-container'>
             <p>Words To Learn:</p>
-            <ul>
-              <li>{'words'}</li>
-            </ul>
+            <div>
+              <ul>
+                <li>{'words'}</li>
+                <li>{'words'}</li>
+                <li>{'words'}</li>
+              </ul>
+            </div>
           </div>
 
           <div className='button-container-dashboard'>
