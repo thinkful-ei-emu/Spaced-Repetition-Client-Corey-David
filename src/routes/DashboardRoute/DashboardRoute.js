@@ -12,6 +12,9 @@ class DashboardRoute extends Component {
     score:0
   }
   static contextType = UserContext;
+
+  words;
+
   componentDidMount(){
     Api.doFetch('language')
     .then(res=> this.setState({lang: res.language, words: res.words},()=>{
@@ -22,9 +25,15 @@ class DashboardRoute extends Component {
         this.setState({score:total});
       }
 
+      this.words = this.state.words.map(word => (
+        <tr><td>{word.original}</td> <td>{word.correct_count}</td> <td>{word.incorrect_count}</td></tr>
+      ))
+
     }))
     .catch(e => console.log(e));
   }
+
+
   render(){
     return (
 
@@ -41,11 +50,24 @@ class DashboardRoute extends Component {
             </div>
           </div>
 
-          <div>
-            <h3>Words to practice</h3>
-            <ul>
-              <li>{'words'}</li>
-            </ul>
+          <div className='toLearn-container'>
+            <h2>Words To Learn</h2>
+            <div>
+              <table className='table-container'>
+                <tr id='row'>
+                  <th id='word'>
+                    Word
+                  </th>
+                  <th id='correct'>
+                    Correct
+                  </th>
+                  <th id='incorrect'>
+                    Incorrect
+                  </th>
+                </tr>
+                  {this.words} 
+              </table>
+            </div>
           </div>
 
           <div className='button-container-dashboard'>
