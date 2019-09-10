@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserContext from './../../contexts/UserContext';
 import AuthApiService from '../../services/auth-api-service';
 import Api from '../../services/Api.service';
+import './Dashboard.css';
 
 class DashboardRoute extends Component {
   state = {
@@ -17,11 +18,31 @@ class DashboardRoute extends Component {
   }
   render(){
     return (
-        <div>
-          the DashBoard
-          <h2>Language: {this.state.lang.name}</h2>
-          <label htmlFor="progress">progress</label>
-          <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
+
+        <div className='dashboard-container'>
+
+          <h2>Dashboard for: {this.state.lang.name}</h2>
+
+
+          <div className='progress-bar'>
+          <p>Words Correct: {'TODO'}</p>
+            <div>
+              <label htmlFor="progress">{this.state.lang.name} Progress:</label>
+              <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
+            </div>
+          </div>
+
+          <div>
+            <p>Words To Learn:</p>
+            <ul>
+              <li>{'words'}</li>
+            </ul>
+          </div>
+
+          <div className='button-container-dashboard'>
+            <button>Start Learning</button>
+          </div>
+
         </div>)
   }
 }

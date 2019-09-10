@@ -1,0 +1,20 @@
+.dashboard-container{
+  /* border: 1px solid black; */
+  padding: 10px;
+  margin: 10px;
+}
+
+.progress-bar{
+  /* border: 1px solid black; */
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-container-dashboard{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+}
