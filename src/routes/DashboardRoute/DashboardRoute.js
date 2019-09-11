@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import UserContext from './../../contexts/UserContext';
-import AuthApiService from '../../services/auth-api-service';
+//import AuthApiService from '../../services/auth-api-service';
 import Api from '../../services/Api.service';
+import Button from '../../components/Button/Button';
 import './Dashboard.css';
 
 class DashboardRoute extends Component {
@@ -26,7 +27,7 @@ class DashboardRoute extends Component {
       }
 
       this.words = this.state.words.map(word => (
-        <tr><td className="original">{word.original}</td> <td className="correct">{word.correct_count}</td> <td className="incorrect">{word.incorrect_count}</td></tr>
+        <tr><td className="original">{word.original}</td><td className="correct">{word.correct_count}</td><td className="incorrect">{word.incorrect_count}</td></tr>
       ))
 
     }))
@@ -46,7 +47,9 @@ class DashboardRoute extends Component {
           <p>Total correct answers: {this.state.score} </p>
             <div>
               <label htmlFor="progress">{this.state.lang.name} Progress:</label>
-              <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
+              <div>
+                <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
+              </div>
             </div>
           </div>
 
@@ -54,14 +57,14 @@ class DashboardRoute extends Component {
             <h3>Words to practice</h3>
             <div>
               <table className='table-container'>
-                <tr id='row'>
-                  <th id='word'>
+                <tr>
+                  <th>
                     Word
                   </th>
-                  <th id='correct'>
+                  <th>
                     Correct
                   </th>
-                  <th id='incorrect'>
+                  <th>
                     Incorrect
                   </th>
                 </tr>
@@ -71,7 +74,7 @@ class DashboardRoute extends Component {
           </div>
 
           <div className='button-container-dashboard'>
-            <button><a href="/learn">Start practicing</a></button>
+            <Button><a href="/learn">Start practicing</a></Button>
           </div>
 
         </section>)

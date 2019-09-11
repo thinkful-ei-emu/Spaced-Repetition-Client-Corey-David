@@ -4,10 +4,15 @@ a{
   display:block;
   text-align: right;
 }
+
+
 #main-title{
   text-align:left;
   border:none;
+  font-size: 36px;
+  color: black;
 }
+
 .nav-container{
     /* border: 1px solid grey; */
     padding: 0px;
@@ -19,10 +24,6 @@ a{
   width: 100%;
 }
 
-
-  #main-title{
-    font-size: 36px;
-  }
 .nav-container{
   /* border: 1px solid grey; */
   padding: 10px;
@@ -38,8 +39,10 @@ header {
   align-items: center;
   background: white;
 }
-span{
-  font-size: 12px;
+#user-name{
+  font-size: 27px;
+  
+  color: #3369ff;
   white-space: nowrap;
 }
 @media only screen and (min-width: 600px) {

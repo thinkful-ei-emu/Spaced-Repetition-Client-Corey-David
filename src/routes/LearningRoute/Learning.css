@@ -1,0 +1,42 @@
+.learning-container{
+  margin: 0px 10px 0px 10px;
+  text-align: center;
+  line-height: 45px;
+  }
+
+.next-word-container{
+  text-align: center;
+}
+
+#next-word{
+  /* border: 2px solid black; */
+  color: white;
+  background: #3369ff;
+  border-radius: 10px;
+  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  font-size: 30px;
+  padding: 5px;
+}
+
+form{
+  text-align: center;
+}
+
+form > button {
+  margin: 20px;
+}
+
+Button:hover{
+  color: red;
+}
+
+@media only screen and (min-width: 600px) {
+  .learning-container{
+    margin: 0px 20px 0px 20px;
+    text-align: center;
+  }
+  form > button{
+    display: flex;
+    margin: 20px auto;
+  }
+}
