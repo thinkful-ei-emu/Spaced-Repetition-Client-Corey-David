@@ -8,7 +8,7 @@ h2{
 
 #p-sign-up{
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
   color:#3369ff;
 }
 
@@ -17,16 +17,14 @@ h2{
 }
 
 #reg-footer {
-  /* border: 1px solid black; */
   padding: 20px;
   margin: 10px;
 }
 
-/* Button{
-  margin: 20px;
-  border: 2px solid black;
+Button > a{
+  color: white;
   border-radius: 10px;
-} */
+}
 
 Button{
   display: inline-block;
@@ -51,9 +49,7 @@ a.button6:active{
 }
 
 a:hover{
-  border: solid 1px black;
-  border-radius: 10px;
-  background: lightgrey;
+  color: red;
 }
 
 #registration-name-input{
@@ -70,6 +66,5 @@ a:hover{
 
 @media only screen and (max-width: 600px) {
   body {
-    /* background-color: lightblue; */
   }
 }

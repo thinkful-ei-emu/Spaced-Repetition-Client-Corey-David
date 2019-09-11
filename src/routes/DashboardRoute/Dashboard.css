@@ -1,7 +1,10 @@
 .dashboard-container{
     /* border: 1px solid black; */
+    max-width: 100%;
     padding: 10px;
-    margin: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
   }
   .dashboard-container > label{
     text-align: center;
@@ -29,25 +32,30 @@
   }
   
   table, th, td { 
+    /* display: flex; */
+    margin: 0 auto;
     width:100%;
+    font-size: 90%;
     border: 1px solid black; 
     border-collapse: collapse;
+    justify-content: center;
     text-align: center;
+    white-space: nowrap;
   }
+
   
-
-
+  
 @media only screen and (min-width: 600px) {
     table, th, td { 
-    margin:auto;
-    border: 1px solid black; 
+    /* display: flex; */
+    margin: auto;
     border-collapse: collapse;
     padding: 0 25px 0 25px;
     text-align: center;
   }
+
   .progress-bar{
     /* border: 1px solid black; */
     display: flex;
-
   }
 }
