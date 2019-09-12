@@ -42,7 +42,6 @@ class DashboardRoute extends Component {
 
           <h2>Dashboard for: {this.state.lang.name}</h2>
 
-
           <div className='progress-bar'>
           <p>Total correct answers: {this.state.score} </p>
             <div>
@@ -57,18 +56,20 @@ class DashboardRoute extends Component {
             <h3>Words to practice</h3>
             <div>
               <table className='table-container'>
-                <tr>
-                  <th>
-                    Word
-                  </th>
-                  <th>
-                    Correct
-                  </th>
-                  <th>
-                    Incorrect
-                  </th>
-                </tr>
-                  {this.words} 
+                <tbody>
+                  <tr key='key'>
+                    <th>
+                      Word
+                    </th>
+                    <th>
+                      Correct
+                    </th>
+                    <th>
+                      Incorrect
+                    </th>
+                  </tr>
+                    {this.words} 
+                </tbody>
               </table>
             </div>
           </div>

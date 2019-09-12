@@ -13,8 +13,8 @@ export default class Api {
     }
 
     if(body)
-      options.body = body;
-    console.log(options);
+      options.body = JSON.stringify(body);
+    console.log('options',options);
     if(TokenService.hasAuthToken())
       options.headers  = new Headers({Authorization:`bearer ${TokenService.getAuthToken()}`, 'Content-type':'Application/json'});
     return fetch(url + endpoint, options).then(resp=>{
