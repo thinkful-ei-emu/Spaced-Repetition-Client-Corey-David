@@ -13,7 +13,7 @@ class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div>
+      <div className='user-container'>
         <span id='user-name'>
           {this.context.user.name}
         </span>

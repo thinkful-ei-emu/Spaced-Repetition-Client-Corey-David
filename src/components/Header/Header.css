@@ -41,15 +41,13 @@ header {
 }
 #user-name{
   font-size: 27px;
-  
   color: #3369ff;
-  white-space: nowrap;
+}
+
+.user-container{
+  text-align: right;
 }
 @media only screen and (min-width: 600px) {
- 
-
-
-
 
 .LoginLogout{
   padding: 10px;
@@ -66,7 +64,6 @@ header {
 #signuplink{
   padding: 0 10px;
 }
-
 
  
 } 
