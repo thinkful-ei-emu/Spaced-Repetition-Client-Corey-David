@@ -19,6 +19,14 @@ h2{
 #reg-footer {
   padding: 20px;
   margin: 10px;
+  text-align: center;
+}
+
+#reg-footer > a{
+  text-align: center;
+  color: #3369ff;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 Button > a{
@@ -64,7 +72,7 @@ a:hover{
   margin: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-  }
+@media only screen and (min-width: 600px) {
+ 
+
 }

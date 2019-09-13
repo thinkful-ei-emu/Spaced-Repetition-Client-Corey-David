@@ -26,8 +26,12 @@ class DashboardRoute extends Component {
         this.setState({score:total});
       }
 
-      this.words = this.state.words.map(word => (
-        <tr><td className="original">{word.original}</td><td className="correct">{word.correct_count}</td><td className="incorrect">{word.incorrect_count}</td></tr>
+      this.words = this.state.words.map((word,index) => (
+        <tr key={index}>
+          <td className="original">{word.original}</td>
+          <td className="correct">{word.correct_count}</td>
+          <td className="incorrect">{word.incorrect_count}</td>
+        </tr>
       ))
 
     }))

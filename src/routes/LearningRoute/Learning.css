@@ -1,7 +1,7 @@
 .learning-container{
   margin: 0px 10px 0px 10px;
   text-align: center;
-  line-height: 45px;
+  font-size: 19px;
   }
 
 .next-word-container{
@@ -30,10 +30,15 @@ Button:hover{
   color: red;
 }
 
+#learn-guess-input {
+  margin-top: 10px;
+}
+
 @media only screen and (min-width: 600px) {
   .learning-container{
     margin: 0px 20px 0px 20px;
     text-align: center;
+    line-height: 45px;
   }
   form > button{
     display: flex;

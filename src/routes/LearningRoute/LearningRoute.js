@@ -7,6 +7,7 @@ class LearningRoute extends Component {
 
   state = {
   guess : '',
+  error : '',
     nextWord : {
       nextWord : '',
       wordCorrectCount : 0,
@@ -51,7 +52,18 @@ class LearningRoute extends Component {
           currentWord : newCurrentWord,
           guess
         })
-      });
+      })
+      .catch((error) => {
+        if (error.totalScore) {
+          this.setState({
+            error : 'The game is over'
+          })
+        }
+        console.log(this.state.error)
+        return
+      })
+      
+
     e.target['answer-input'].value = '';
   }
 
@@ -74,6 +86,8 @@ class LearningRoute extends Component {
       <h2 className='DisplayFeedback'>You were correct!</h2> : 
       <h2>Good try, but not quite right.</h2>
 
+    let gameOver = <p>{this.state.error}</p>;
+
     return (
       <section className='learning-container'>
         
@@ -81,6 +95,8 @@ class LearningRoute extends Component {
           <h2>Translate the word:</h2>
           <span id='next-word'>{this.state.currentWord.nextWord}</span>
         </div>}
+
+        {this.state.currentWord.answer !== '' && gameOver}
 
         {this.state.currentWord === null && <p>nothing</p>}
         {this.state.currentWord.isCorrect !== null && answer}
@@ -98,7 +114,7 @@ class LearningRoute extends Component {
         <p>You have answered this word incorrectly {this.state.currentWord.wordIncorrectCount} times.</p>
 
         {this.state.guess === '' && <form onSubmit={(e)=>this.handleSubmit(e)}>
-          <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
+          <label htmlFor='learn-guess-input'>What's the translation for this word?</label><br/>
           <input name='answer-input' id='learn-guess-input' type='text' required></input>
           <Button type='submit'>Submit your answer</Button>
         </form>}
