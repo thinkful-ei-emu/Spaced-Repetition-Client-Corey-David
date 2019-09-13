@@ -2,6 +2,7 @@
 
 ## What does it do?
 [WIKI on Spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition)
+
 Spaced-Repetiton Learning is a revolutionary technique proven to increase one ability to retain complex data
 it works using a special algorithm that is described as 
 > - Given a list of questions with corresponding "memory values", M, starting at 1:
@@ -20,7 +21,8 @@ This app is set up to teach GERMAN but can be easily configure to be used to tea
 
 Fork GIT
 
-run `NPM i`
+run `NPM i`,
+
 run `npm run start`
 
 ## Deploy
