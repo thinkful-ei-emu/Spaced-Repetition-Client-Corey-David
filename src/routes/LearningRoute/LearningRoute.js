@@ -6,23 +6,23 @@ import './Learning.css'
 class LearningRoute extends Component {
 
   state = {
-    guess : '',
-      nextWord : {
-        nextWord : '',
-        wordCorrectCount : 0,
-        wordIncorrectCount : 0,
-        totalScore : 0,
-        answer : '',
-        isCorrect : null
-      },
-      currentWord : {
-        word : '',
-        wordCorrectCount : 0,
-        wordIncorrectCount : 0,
-        totalScore : 0,
-        answer : '',
-        isCorrect : null
-      }
+  guess : '',
+    nextWord : {
+      nextWord : '',
+      wordCorrectCount : 0,
+      wordIncorrectCount : 0,
+      totalScore : 0,
+      answer : '',
+      isCorrect : null
+    },
+    currentWord : {
+      word : '',
+      wordCorrectCount : 0,
+      wordIncorrectCount : 0,
+      totalScore : 0,
+      answer : '',
+      isCorrect : null
+    }
   }
 
   componentDidMount(){
@@ -32,7 +32,6 @@ class LearningRoute extends Component {
       res.word = res.nextWord
       console.log(res.nextWord)
       this.setState({
-        // word : res.nextWord,
         currentWord : res
       })
     })
@@ -48,19 +47,28 @@ class LearningRoute extends Component {
         let newCurrentWord = {...this.state.currentWord}
         console.log(newCurrentWord)
         newCurrentWord.isCorrect = res.isCorrect
+        newCurrentWord.answer = res.answer
         res.isCorrect = null
         this.setState({
           nextWord : res,
           currentWord : newCurrentWord,
-          guess,
-          answer : res.answer
+          guess
         })
       });
     e.target['answer-input'].value = '';
   }
 
   handleNextWord = (e) => {
-    //todo
+    //next word => this.state.current.word
+    e.preventDefault();
+    let nextQ = {...this.state.nextWord}
+    nextQ.answer = '';
+    nextQ.isCorrect = null;
+    this.setState({
+      currentWord : nextQ,
+      nextWord : {},
+      guess : ''
+    })
     
   }
 
@@ -73,18 +81,18 @@ class LearningRoute extends Component {
     return (
       <section className='learning-container'>
         
-        <div className='next-word-container'>
-          <h1>Translate the word:</h1>
+        {this.state.guess === '' && <div className='next-word-container'>
+          <h2>Translate the word:</h2>
           <span id='next-word'>{this.state.currentWord.nextWord}</span>
-        </div>
+        </div>}
 
         {this.state.currentWord === null && <p>nothing</p>}
         {this.state.currentWord.isCorrect !== null && answer}
         
         <div className='DisplayFeedback'>
-          {this.state.currentWord.isCorrect === false && <p className='DisplayFeedback'>The correct translation for {this.state.currentWord.word} was {this.state.answer} and you chose {this.state.guess}!</p>}
+          {this.state.currentWord.isCorrect === false && <p className='DisplayFeedback'>The correct translation for {this.state.currentWord.word} was {this.state.currentWord.answer} and you chose {this.state.guess}!</p>}
 
-          {this.state.currentWord.isCorrect === true && <p className='DisplayFeedback'>The correct translation for {this.state.currentWord.word} was {this.state.answer} and you chose {this.state.guess}!</p>}
+          {this.state.currentWord.isCorrect === true && <p className='DisplayFeedback'>The correct translation for {this.state.currentWord.word} was {this.state.currentWord.answer} and you chose {this.state.guess}!</p>}
         </div>
 
         <div className='DisplayScore'>
@@ -92,13 +100,15 @@ class LearningRoute extends Component {
         </div>
         <p>You have answered this word correctly {this.state.currentWord.wordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {this.state.currentWord.wordIncorrectCount} times.</p>
-        <form onSubmit={(e)=>this.handleSubmit(e)}>
+
+        {this.state.guess === '' && <form onSubmit={(e)=>this.handleSubmit(e)}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
           <input name='answer-input' id='learn-guess-input' type='text' required></input>
-          {/* <button type='submit'>Submit your answer</button> */}
-          <Button type='submit'>Try another word!</Button>
-        </form>
-        {/* <Button>Try another word!</Button> */}
+          <Button type='submit'>Submit your answer</Button>
+        </form>}
+
+          {this.state.guess !== '' && <Button onClick={(e)=>this.handleNextWord(e)}type='submit'>Try another word!</Button>}
+        
 
       </section>
     );
