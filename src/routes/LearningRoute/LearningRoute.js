@@ -30,7 +30,6 @@ class LearningRoute extends Component {
     .then(res => {
       res.isCorrect = null
       res.word = res.nextWord
-      console.log(res.nextWord)
       this.setState({
         currentWord : res
       })
@@ -40,12 +39,10 @@ class LearningRoute extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('test for learning submit');
     let guess = e.target['answer-input'].value;
     Api.doFetch('language/guess', 'POST', {guess})
       .then(res => {
         let newCurrentWord = {...this.state.currentWord}
-        console.log(newCurrentWord)
         newCurrentWord.isCorrect = res.isCorrect
         newCurrentWord.answer = res.answer
         res.isCorrect = null
@@ -59,7 +56,6 @@ class LearningRoute extends Component {
   }
 
   handleNextWord = (e) => {
-    //next word => this.state.current.word
     e.preventDefault();
     let nextQ = {...this.state.nextWord}
     nextQ.answer = '';

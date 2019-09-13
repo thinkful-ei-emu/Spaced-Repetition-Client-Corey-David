@@ -6,7 +6,7 @@ export default class Api {
   }
 
   static doFetch(endpoint, method='GET', body=null){
-    let url = 'http://localhost:8000/api/';
+    let url = 'https://protected-ravine-87000.herokuapp.com/api/';
     let options = {
       method,
       headers: new Headers({'Content-type' : 'application/json'})
@@ -14,7 +14,6 @@ export default class Api {
 
     if(body)
       options.body = JSON.stringify(body);
-    console.log('options',options);
     if(TokenService.hasAuthToken())
       options.headers  = new Headers({Authorization:`bearer ${TokenService.getAuthToken()}`, 'Content-type':'Application/json'});
     return fetch(url + endpoint, options).then(resp=>{

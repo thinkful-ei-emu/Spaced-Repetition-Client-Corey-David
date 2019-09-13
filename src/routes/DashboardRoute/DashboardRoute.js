@@ -47,7 +47,8 @@ class DashboardRoute extends Component {
             <div>
               <label htmlFor="progress">{this.state.lang.name} Progress:</label>
               <div>
-                <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/>
+                {/* <progress value={((this.state.lang.head-1) - this.state.words.length) * 100} max={100}/> */}
+                <progress value={((this.state.score-1) / this.state.score) * 50} max={100}/>
               </div>
             </div>
           </div>
