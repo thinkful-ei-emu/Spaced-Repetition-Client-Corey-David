@@ -13,7 +13,7 @@ it works using a special algorithm that is described as
 > - Reset M to 1
 >- Move the question back M places in the list
 
-This app is set up to teach GERMAN but can be easily configure to be used to teach a wide asortment of memory intensive lessions
+This app is set up to teach GERMAN but can be easily configure to be used to teach a wide asortment of memory intensive lessons
 
 
 ## Setup
@@ -28,12 +28,12 @@ run `npm run start`
 
 2) run `now`
 
-## tech stack
+## Tech Stack
 >REACTJS
 >REACT ROUTER
 >HTML5, CSS, JS
 >CYPRESS
-## screenShots
+## Screenshots
 
 ![login](https://github.com/thinkful-ei-emu/Spaced-Repetition-Client-Corey-David/blob/master/Screenshots/login.PNG)
 ![dashboard](https://github.com/thinkful-ei-emu/Spaced-Repetition-Client-Corey-David/blob/master/Screenshots/dashboard.PNG)
