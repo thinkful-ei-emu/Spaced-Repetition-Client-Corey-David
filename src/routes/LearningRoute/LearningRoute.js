@@ -46,6 +46,12 @@ class LearningRoute extends Component {
         let newCurrentWord = {...this.state.currentWord}
         newCurrentWord.isCorrect = res.isCorrect
         newCurrentWord.answer = res.answer
+        if(res.isCorrect){
+          newCurrentWord.wordCorrectCount++;
+        }else{
+          newCurrentWord.wordIncorrectCount++;
+        }
+        
         res.isCorrect = null
         this.setState({
           nextWord : res,
