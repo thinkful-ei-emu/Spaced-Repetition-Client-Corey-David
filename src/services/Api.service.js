@@ -1,12 +1,10 @@
 import TokenService from "./token-service";
-
+import Config from '../config';
 export default class Api {
-  constructor(){
-    this.url = 'localhost:8000/api';
-  }
+  
 
   static doFetch(endpoint, method='GET', body=null){
-    let url = 'https://protected-ravine-87000.herokuapp.com/api/';
+    let url = Config.API_ENDPOINT + '/';
     let options = {
       method,
       headers: new Headers({'Content-type' : 'application/json'})
