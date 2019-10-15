@@ -2,9 +2,7 @@ import TokenService from "./token-service";
 import config from '../config'; 
 
 export default class Api {
-  constructor(){
-    this.url = 'localhost:8000/api';
-  }
+  
 
   static doFetch(endpoint, method='GET', body=null){
     let options = {

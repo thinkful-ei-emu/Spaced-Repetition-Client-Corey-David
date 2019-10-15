@@ -49,6 +49,7 @@ class LearningRoute extends Component {
         newCurrentWord.answer = res.answer
         if(res.isCorrect){
           newCurrentWord.wordCorrectCount++;
+          newCurrentWord.totalScore++;
         }else{
           newCurrentWord.wordIncorrectCount++;
         }
