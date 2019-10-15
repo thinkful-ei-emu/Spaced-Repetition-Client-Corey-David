@@ -7,12 +7,12 @@ class LearningRoute extends Component {
 
   state = {
   guess : '',
+  totalScore : 0,
   error : '',
     nextWord : {
       nextWord : '',
       wordCorrectCount : 0,
       wordIncorrectCount : 0,
-      totalScore : 0,
       answer : '',
       isCorrect : null
     },
@@ -32,6 +32,7 @@ class LearningRoute extends Component {
       res.isCorrect = null
       res.word = res.nextWord
       this.setState({
+        totalScore : res.totalScore,
         currentWord : res
       })
     })
@@ -54,6 +55,7 @@ class LearningRoute extends Component {
         
         res.isCorrect = null
         this.setState({
+          totalScore : res.totalScore,
           nextWord : res,
           currentWord : newCurrentWord,
           guess
@@ -114,7 +116,7 @@ class LearningRoute extends Component {
         </div>
 
         <div className='DisplayScore'>
-          <p>Your total score is: {this.state.currentWord.totalScore}</p>
+          <p>Your total score is: {this.state.totalScore}</p>
         </div>
         <p>You have answered this word correctly {this.state.currentWord.wordCorrectCount} times.</p>
         <p>You have answered this word incorrectly {this.state.currentWord.wordIncorrectCount} times.</p>
