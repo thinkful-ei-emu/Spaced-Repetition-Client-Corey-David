@@ -20,10 +20,10 @@ class DashboardRoute extends Component {
     Api.doFetch('language')
     .then(res=> this.setState({lang: res.language, words: res.words},()=>{
       if(this.state.words.length > 1){
-        let total = 0;
+        let total = res.language.total_score
     
-        this.state.words.forEach(word=>total += word.correct_count - word.incorrect_count);
-        this.setState({score:total});
+        
+       this.setState({score:total});
       }
 
       this.words = this.state.words.map((word,index) => (
